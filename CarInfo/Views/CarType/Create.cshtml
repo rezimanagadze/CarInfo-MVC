@@ -1,0 +1,27 @@
+﻿@model CarInfo.Models.CarTypeModel.CarTypeModel
+
+
+<form method="post"  enctype="multipart/form-data" asp-action="Create">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create CarType</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category"></label>
+            <input asp-for="Category" class="form-control" />
+        </div>
+         <div class="form-group">
+            <label asp-for="Image" class="custom-file-input"></label>
+            <div class="custom-file">
+            <input asp-for="Image" class="custom-file-input" accept="image/*" data-allowed-file-extensions='["jpg", "png" , "jpeg"]' required'  id="customFile">
+            <label class="custom-file-label" for="customFile"></label>
+            </div>
+            <span asp-validation-for="Image" class="text-danger"></span>
+     </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+        <a asp-controller="CarType" asp-action="AllCarType" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>

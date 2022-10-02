@@ -1,0 +1,28 @@
+﻿@model CarInfo.Models.CatalogModel.CatalogModel
+
+<form method="post" asp-action="Delete">
+	<input asp-for="Id" hidden />
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Delete Catalog</h2>
+			<hr />
+		</div>
+        <div class="mb-3">
+            <label asp-for="Mark"></label>
+            <input asp-for="Mark" disabled class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Country"></label>
+            <input asp-for="Country" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Logo"></label>
+            <input asp-for="Logo" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
+		<a asp-controller="Catalog" asp-action="AllCatalog" class="btn btn-secondary" style="width:150px">
+			Back to List
+		</a>
+	</div>
+</form>
+

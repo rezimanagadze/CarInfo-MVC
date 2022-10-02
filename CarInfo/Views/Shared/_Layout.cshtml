@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - CarInfo</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CarInfo.styles.css" asp-append-version="true" />
+</head>
+<body style="background-color:#F5FFF5;">    
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color:#F0FFF0;">
+            <a href="/Home/Index"><img src="https://www.logomaker.com/api/main/images/1j+ojFVDOMkX9Wytexe43D6kh...eAqxJKnB...FwXs1M3EMoAJtliYpgvZr8...88 " class="max-width-100" width="200" height="100"></a>
+            <div class="container-fluid">  
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="row">
+                   <div class="col-xl-12">
+                     <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item"><a class="nav-link text-dark" style="font-size:x-large" asp-area=" " asp-controller="Catalog" asp-action="AllCatalog">Catalog</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" style="font-size:x-large" asp-area="" asp-controller="CarType" asp-action="AllCarType">Category</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" style="font-size:x-large" asp-area="" asp-controller="Model" asp-action="AllModel">Models</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" style="font-size:x-large" asp-area="" asp-controller="SuperCar" asp-action="AllSuperCar">SuperCars</a></li>
+                      </ul>
+                    </div>                   
+                </div>   
+                <partial name="_LoginPartial" />
+            </div>           
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+
+
+@*<nav>
+    <div class="container-xxl container-xl">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="menu-wrapper">
+                    <a href="https://primetime.ge"><img class="d-block" height="78" src="/assets/images/web/logo.svg" alt=""></a>
+                    <ul class="menu " style="opacity: 1;">
+                        <li style="display: inline-block;"><a class="single-category" href="https://primetime.ge/news/all">ყველა სიახლე</a></li>
+                        <li style="display: none;"><a class="single-category" href="https://primetime.ge/news/omi-ukrainashi">ომი უკრაინაში </a></li>
+                        <li style="display: none;"><a class="single-category" href="https://primetime.ge/news/politika">პოლიტიკა </a></li>
+                        <li style="display: none;"><a class="main-category" style="cursor: pointer">საზოგადოება  &nbsp; <img src="/assets/images/icons/arrow-down.svg" width="10" height="6"></a><ul class="sub-menu"><li class="keep-opened"></li><li><a href="https://primetime.ge/news/jandacva">ჯანდაცვა</a></li><li><a href="https://primetime.ge/news/mimoxilva">მიმოხილვა</a></li><li><a href="https://primetime.ge/news/sazogadoeb">საზოგადოება</a></li><li><a href="https://primetime.ge/news/socialuri-tema">სოციალური თემა</a></li><li><a href="https://primetime.ge/news/ganatleba">განათლება</a></li><li><a href="https://primetime.ge/news/kultura">კულტურა</a></li><li><a href="https://primetime.ge/news/dedakalaki">დედაქალაქი</a></li></ul></li>
+                        <li style="display: none;"><a class="main-category" style="cursor: pointer">საკითხავი  &nbsp; <img src="/assets/images/icons/arrow-down.svg" width="10" height="6"></a><ul class="sub-menu"><li class="keep-opened"></li><li><a href="https://primetime.ge/news/moda">მოდა</a></li><li><a href="https://primetime.ge/news/faceambebi">faceამბები</a></li><li><a href="https://primetime.ge/news/tabloidi">ტაბლოიდი</a></li><li><a href="https://primetime.ge/news/shoubiznesi">შოუბიზნესი</a></li><li><a href="https://primetime.ge/news/rchevebi">რჩევები</a></li><li><a href="https://primetime.ge/news/istoriebi">ისტორიები</a></li><li><a href="https://primetime.ge/news/horoskopi">ჰოროსკოპი</a></li><li><a href="https://primetime.ge/news/quiz">ქვიზი</a></li></ul></li>
+                        <li style="display: none;"><a class="main-category" style="cursor: pointer">სამართალი  &nbsp; <img src="/assets/images/icons/arrow-down.svg" width="10" height="6"></a><ul class="sub-menu"><li class="keep-opened"></li><li><a href="https://primetime.ge/news/kriminali">კრიმინალი</a></li><li><a href="https://primetime.ge/news/shemtxveva">შემთხვევა</a></li><li><a href="https://primetime.ge/news/samartalii">სამართალი</a></li></ul></li>
+                        <li style="display: none;"><a class="single-category" href="https://primetime.ge/news/msoflio">მსოფლიო </a></li>
+                        <li style="display: none;"><a class="main-category" style="cursor: pointer">ეკონომიკა  &nbsp; <img src="/assets/images/icons/arrow-down.svg" width="10" height="6"></a><ul class="sub-menu"><li class="keep-opened"></li><li><a href="https://primetime.ge/news/biznesi">ბიზნესი</a></li><li><a href="https://primetime.ge/news/finansebi">ფინანსები</a></li><li><a href="https://primetime.ge/news/mecniereba">მეცნიერება</a></li></ul></li>
+                        <li style="display: none;"><a class="single-category" href="https://primetime.ge/news/covid-19">covid-19 </a></li>
+                        <li style="display: none;"><a class="single-category" href="https://primetime.ge/news/sporti">სპორტი </a></li>
+                        <li style="display: none;"><a class="single-category" href="https://primetime.ge/news/regioni">რეგიონი </a></li>
+                        <li id="more-category-holder" style="display: inline-block;">
+                        <li><a class="single-category" href="https://primetime.ge/news/omi-ukrainashi">ომი უკრაინაში </a> <a class="single-category" href="https://primetime.ge/news/politika">პოლიტიკა </a> <a class="main-category" style="cursor: pointer">საზოგადოება  &nbsp; <img src="/assets/images/icons/arrow-down.svg" width="10" height="6"></a><ul class="sub-menu"><li class="keep-opened"></li><li><a href="https://primetime.ge/news/jandacva">ჯანდაცვა</a></li><li><a href="https://primetime.ge/news/mimoxilva">მიმოხილვა</a></li><li><a href="https://primetime.ge/news/sazogadoeb">საზოგადოება</a></li><li><a href="https://primetime.ge/news/socialuri-tema">სოციალური თემა</a></li><li><a href="https://primetime.ge/news/ganatleba">განათლება</a></li><li><a href="https://primetime.ge/news/kultura">კულტურა</a></li><li><a href="https://primetime.ge/news/dedakalaki">დედაქალაქი</a></li></ul> <a class="main-category" style="cursor: pointer">საკითხავი  &nbsp; <img src="/assets/images/icons/arrow-down.svg" width="10" height="6"></a><ul class="sub-menu"><li class="keep-opened"></li><li><a href="https://primetime.ge/news/moda">მოდა</a></li><li><a href="https://primetime.ge/news/faceambebi">faceამბები</a></li><li><a href="https://primetime.ge/news/tabloidi">ტაბლოიდი</a></li><li><a href="https://primetime.ge/news/shoubiznesi">შოუბიზნესი</a></li><li><a href="https://primetime.ge/news/rchevebi">რჩევები</a></li><li><a href="https://primetime.ge/news/istoriebi">ისტორიები</a></li><li><a href="https://primetime.ge/news/horoskopi">ჰოროსკოპი</a></li><li><a href="https://primetime.ge/news/quiz">ქვიზი</a></li></ul> <a class="main-category" style="cursor: pointer">სამართალი  &nbsp; <img src="/assets/images/icons/arrow-down.svg" width="10" height="6"></a><ul class="sub-menu"><li class="keep-opened"></li><li><a href="https://primetime.ge/news/kriminali">კრიმინალი</a></li><li><a href="https://primetime.ge/news/shemtxveva">შემთხვევა</a></li><li><a href="https://primetime.ge/news/samartalii">სამართალი</a></li></ul> <a class="single-category" href="https://primetime.ge/news/msoflio">მსოფლიო </a> <a class="main-category" style="cursor: pointer">ეკონომიკა  &nbsp; <img src="/assets/images/icons/arrow-down.svg" width="10" height="6"></a><ul class="sub-menu"><li class="keep-opened"></li><li><a href="https://primetime.ge/news/biznesi">ბიზნესი</a></li><li><a href="https://primetime.ge/news/finansebi">ფინანსები</a></li><li><a href="https://primetime.ge/news/mecniereba">მეცნიერება</a></li></ul> <a class="single-category" href="https://primetime.ge/news/covid-19">covid-19 </a> <a class="single-category" href="https://primetime.ge/news/sporti">სპორტი </a> <a class="single-category" href="https://primetime.ge/news/regioni">რეგიონი </a></li>                         
+                    </ul>                
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+    
+
+
